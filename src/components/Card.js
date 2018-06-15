@@ -20,7 +20,10 @@ const SingleCard = ({ target, killingAction }) => {
           {target.status === "alive" ? (
             <div>
               <CardText>Have fun, just clic below</CardText>
-              <Button type="button" onClick={() => killingAction(target)}>
+              <Button
+                type="button"
+                onClick={() => killingAction(this.state.targets, target)}
+              >
                 Kill
               </Button>
             </div>

@@ -4,7 +4,7 @@ import "./App.css"
 import ListCards from "./components/ListCards"
 
 const killAction = (previousTargets, target) => {
-  /*   previousTargets.forEach(element => {
+  /* previousTargets.forEach(element => {
     if (element.name === target.name) {
       element.status = "dead"
     }
