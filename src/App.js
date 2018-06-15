@@ -3,6 +3,10 @@ import logo from "./assets/star-wars-episode-7-image.jpg"
 import "./App.css"
 import ListCards from "./components/ListCards"
 
+const killAction = target => {
+  target.status = "dead"
+}
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -38,7 +42,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to shooting App of heroes</h1>
         </header>
         <p className="App-intro">To kill your hero, just clic on "kill".</p>
-        <ListCards targets={this.state.targets} />
+        <ListCards targets={this.state.targets} killingAction={killAction} />
       </div>
     )
   }
