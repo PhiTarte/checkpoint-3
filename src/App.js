@@ -3,8 +3,13 @@ import logo from "./assets/star-wars-episode-7-image.jpg"
 import "./App.css"
 import ListCards from "./components/ListCards"
 
-const killAction = target => {
-  target.status = "dead"
+const killAction = (previousTargets, target) => {
+  /*   previousTargets.forEach(element => {
+    if (element.name === target.name) {
+      element.status = "dead"
+    }
+  })
+  this.setState({ targets: previousTargets }) */
 }
 
 class App extends Component {
