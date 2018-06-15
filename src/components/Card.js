@@ -3,28 +3,29 @@ import {
   Card,
   CardImg,
   CardText,
-  CardBody,
+  CardImgOverlay,
   CardTitle,
   CardSubtitle,
   Button
 } from "reactstrap"
 
-const SingleCard = props => {
+const SingleCard = ({ target, killingAction }) => {
   return (
     <div>
-      <Card>
-        <CardImg
-          top
-          width="100%"
-          src={props.target.picture}
-          alt={props.target.name}
-        />
-        <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
+      <Card inverse>
+        <CardImg width="40%" src={target.picture} alt={target.name} />
+        <CardImgOverlay>
+          <CardTitle>{target.name}</CardTitle>
+          <CardSubtitle>{target.status}</CardSubtitle>
           <CardText>Have fun, just clic below</CardText>
-          <Button>Kill</Button>
-        </CardBody>
+          {target.status === "alive" ? (
+            <Button type="button" onClick={() => killingAction(target)}>
+              Kill
+            </Button>
+          ) : (
+            ""
+          )}
+        </CardImgOverlay>
       </Card>
     </div>
   )
